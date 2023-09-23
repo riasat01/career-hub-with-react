@@ -3,14 +3,14 @@ import Footer from "../footer/Footer";
 
 const Navbar = () => {
     const links = <>
-    <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/statistics'>Statistics</NavLink></li>
-    <li><NavLink to='/applied'>Applied Jobs</NavLink></li>
-    <li><NavLink to='/blogs'>Blogs</NavLink></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/statistics'>Statistics</NavLink></li>
+        <li><NavLink to='/applied'>Applied Jobs</NavLink></li>
+        <li><NavLink to='/blogs'>Blogs</NavLink></li>
     </>
     return (
-        <div>
-            <div className="navbar bg-base-100">
+        <div className="">
+            <div className="px-36 navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -20,7 +20,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <a className="btn btn-ghost normal-case text-xl px-0">Career Hub</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -31,7 +31,9 @@ const Navbar = () => {
                     <a className="btn">Button</a>
                 </div>
             </div>
-            <Outlet></Outlet>
+            <section className="px-36">
+                <Outlet></Outlet>
+            </section>
             <Footer></Footer>
         </div>
     );

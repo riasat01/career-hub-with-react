@@ -5,6 +5,7 @@ import Statistics from "../components/statistics/Statistics";
 import AppliedJobs from "../components/applied-jobs/AppliedJobs";
 import Blogs from "../components/blogs/Blogs";
 import ErrorPage from "../components/error-page/ErrorPage";
+import JobDetails from "../components/job-details/JobDetails";
 
 const MainLayout = () => {
     const myRouter= createBrowserRouter([
@@ -27,6 +28,11 @@ const MainLayout = () => {
                 {
                     path: `/blogs`,
                     element: <Blogs></Blogs>
+                },
+                {
+                    path: `/job/:id`,
+                    element: <JobDetails></JobDetails>,
+                    loader: () => fetch('../jobs.json')
                 }
             ],
             errorElement: <ErrorPage></ErrorPage>

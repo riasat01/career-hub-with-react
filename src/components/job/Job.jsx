@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Job = ({ job }) => {
 
     const gradientBorder = {
@@ -5,9 +7,9 @@ const Job = ({ job }) => {
         borderImage: `linear-gradient(to right, #7E90FE, #9873FF) 1`
     }
 
-    const{logo, job_title, company_name, remote_or_onsite, job_type, location, salary} = job;
+    const{id, logo, job_title, company_name, remote_or_onsite, job_type, location, salary} = job;
     return (
-        <div style={gradientBorder} className="card card-compact w-96 bg-base-100 shadow-xl m-auto pl-12">
+        <div style={gradientBorder} className="card card-compact w-full bg-base-100 shadow-xl m-auto pl-12">
             <figure className="w-fit p-4"><img src={logo} alt="Shoes" /></figure>
             <div className="card-body  space-y-3">
                 <h2 className="card-title">{job_title}</h2>
@@ -21,7 +23,7 @@ const Job = ({ job }) => {
                     <p className="flex-grow-0">Salary: {salary}</p>
                 </div>
                 <div className="card-actions justify-start">
-                    <button className="btn btn-primary bg-gradient-to-tr from-[#7E90FE] to-[#9873FF]">Buy Now</button>
+                    <Link to={`/job/${id}`} className="btn btn-primary bg-gradient-to-tr from-[#7E90FE] to-[#9873FF]">View Details</Link>
                 </div>
             </div>
         </div>
