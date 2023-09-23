@@ -1,10 +1,11 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { setToLocalStorage } from "../localstorage/Localstorage";
 
 const JobDetails = () => {
 
     const jobs = useLoaderData();
-    const id = useParams();
-    const idInt = parseInt(id.id);
+    const {id} = useParams();
+    const idInt = parseInt(id);
     const job = jobs.find(j => j.id == idInt);
     // console.log(jobs, job, idInt)
     const { salary, job_title, contact_information } = job;
@@ -35,7 +36,7 @@ const JobDetails = () => {
                         <p>{email}</p>
                         <p>{address}</p>
                     </div>
-                    <button className="w-full bg-gradient-to-tr from-[#7E90FE] to-[#9873FF] my-3 py-2 rounded-lg text-white text-xl font-medium">Apply Now</button>
+                    <button onClick={() => setToLocalStorage(idInt)} className="w-full bg-gradient-to-tr from-[#7E90FE] to-[#9873FF] my-3 py-2 rounded-lg text-white text-xl font-medium">Apply Now</button>
                 </section>
             </div>
         </>
