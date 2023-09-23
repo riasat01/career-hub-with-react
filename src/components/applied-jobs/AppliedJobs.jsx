@@ -43,7 +43,7 @@ const AppliedJobs = () => {
                 </details>
             </section>
             {
-                displayJobs.map((job, i) => <ApppliedJob key={i} job={job}></ApppliedJob>)
+                displayJobs.length > 0 ? displayJobs.map((job, i) => <ApppliedJob key={i} job={job}></ApppliedJob>) : jobsAppllied.map((job, i) => <ApppliedJob key={i} job={job}></ApppliedJob>)
             }
         </div>
     );
